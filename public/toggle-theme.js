@@ -18,9 +18,12 @@ function getPreferTheme() {
 
 let themeValue = getPreferTheme();
 
+const SwitchedColorModeEvent = new Event("switched-color-mode");
+
 function setPreference() {
   localStorage.setItem("theme", themeValue);
   reflectPreference();
+  document.firstElementChild.dispatchEvent(SwitchedColorModeEvent);
 }
 
 function reflectPreference() {

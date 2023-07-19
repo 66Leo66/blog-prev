@@ -25,6 +25,7 @@
     "rehype-katex": "^6.0.3",
     "remark-collapse": "^0.1.2",
     "remark-math": "^5.1.1",
+    "remark-mermaidjs": "^5.0.1",
     "remark-parse": "^10.0.2",
     "remark-toc": "^8.0.1",
     "remark-torchlight": "^0.0.5",
