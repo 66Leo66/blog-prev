@@ -6,6 +6,7 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
+import Waline from "@components/Waline.vue";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -45,6 +46,10 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     <ul class="tags-container">
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
+
+    <div>
+      <Waline path={Astro.url} client:load/>
+    </div>
   </main>
   <Footer />
 </Layout>
