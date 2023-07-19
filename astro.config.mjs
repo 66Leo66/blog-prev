@@ -6,6 +6,8 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
+import torchlight from 'remark-torchlight' 
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -27,6 +29,13 @@ export default defineConfig({
           test: "Table of contents",
         },
       ],
+      [
+        torchlight,
+        {
+          token: process.env.TORCHLIGHT_TOKEN,
+          theme: 'material-theme-palenight'
+        }
+      ]
     ],
     shikiConfig: {
       theme: "one-dark-pro",

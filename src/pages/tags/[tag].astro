@@ -35,11 +35,11 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 const tagPosts = getPostsByTag(posts, tag);
 ---
 
-<Layout title={`Tag:${tag} | ${SITE.title}`}>
+<Layout title={`标签：${tag} | ${SITE.title}`}>
   <Header activeNav="tags" />
   <Main
-    pageTitle={`Tag:${tag}`}
-    pageDesc={`All the articles with the tag "${tag}".`}
+    pageTitle={`标签：${tag}`}
+    pageDesc={`所有包含“${tag}”标签的文章。`}
   >
     <ul>
       {

@@ -1,21 +1,39 @@
 ---
+import { getCollection } from 'astro:content';
+
 // Remove current url path and remove trailing slash if exists
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
 
+
+const names: Record<string, string> = {
+    posts: "文章",
+    tags: "标签",
+    about: "关于",
+    search: "搜索"
+}
+const blogPosts = await getCollection("blog");
+const postNames = new Map<string, string>(blogPosts.map(post => [post.slug, post.data.title]));
+
+
+
+const translateBreadcrumb = (text: string) => {
+    return text in names ? names[text] : postNames.get("text");
+}
+
 // Get url array from path
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
+const breadcrumbList = currentUrlPath.split("/").slice(1).map(part => translateBreadcrumb(part));
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
-breadcrumbList[0] === "posts" &&
-  breadcrumbList.splice(0, 2, `Posts (page ${breadcrumbList[1] || 1})`);
+breadcrumbList[0] === "文章" &&
+  breadcrumbList.splice(0, 2, `文章 (第 ${breadcrumbList[1] || 1} 页)`);
 ---
 
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">Home</a>
+      <a href="/">首页</a>
       <span aria-hidden="true">&#62;</span>
     </li>
     {
