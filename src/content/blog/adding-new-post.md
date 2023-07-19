@@ -4,7 +4,7 @@ pubDatetime: 2022-09-23T15:22:00Z
 title: Adding new posts in AstroPaper theme
 postSlug: adding-new-posts-in-astropaper-theme
 featured: false
-draft: false
+draft: true
 tags:
   - docs
 ogImage: ""
@@ -118,3 +118,15 @@ My recommendation for image compression sites.
 The default OG image will be placed if a post does not specify the OG image. Though not required, OG image related to the post should be specify in the frontmatter. The recommended size for OG image is **_1200 X 640_** px.
 
 > Since AstroPaper v1.4.0, OG images will be generated automatically if not specified. Check out [the announcement](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/).
+
+## Writing KaTeX
+
+You can $f(x)$
+
+$$
+g(x) = f^2(x)
+$$
+
+$$
+\ce{2H2 + O2 = 2H2O}
+$$

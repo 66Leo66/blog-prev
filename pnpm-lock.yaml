@@ -35,6 +35,9 @@ dependencies:
   remark-math:
     specifier: ^5.1.1
     version: 5.1.1
+  remark-parse:
+    specifier: ^10.0.2
+    version: 10.0.2
   remark-toc:
     specifier: ^8.0.1
     version: 8.0.1
@@ -50,9 +53,6 @@ dependencies:
   vue:
     specifier: ^3.3.4
     version: 3.3.4
-  vue-router:
-    specifier: ^4.2.4
-    version: 4.2.4(vue@3.3.4)
 
 devDependencies:
   '@astrojs/react':
@@ -1740,10 +1740,6 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
-    dev: false
-
-  /@vue/devtools-api@6.5.0:
-    resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
     dev: false
 
   /@vue/reactivity-transform@3.3.4:
@@ -6347,15 +6343,6 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 3.3.4
-    dev: false
-
-  /vue-router@4.2.4(vue@3.3.4):
-    resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@vue/devtools-api': 6.5.0
       vue: 3.3.4
     dev: false
 

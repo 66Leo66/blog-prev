@@ -6,11 +6,14 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
+import remarkParse from "remark-parse";
+
 import torchlight from "remark-torchlight";
 import remarkMath from "remark-math";
+
 import rehypeKatex from "rehype-katex";
 import "katex/contrib/mhchem";
-// import "katex/contrib/copy-tex";
+
 
 import vue from "@astrojs/vue";
 
@@ -28,7 +31,9 @@ export default defineConfig({
     vue(),
   ],
   markdown: {
+    syntaxHighlight: false,
     remarkPlugins: [
+      remarkParse,
       remarkToc,
       [
         remarkCollapse,
@@ -40,19 +45,14 @@ export default defineConfig({
         torchlight,
         {
           token: process.env.TORCHLIGHT_TOKEN,
-          theme: "material-theme-palenight",
+          theme: "nord",
         },
       ],
-      remarkMath
+      remarkMath,
     ],
     rehypePlugins: [
       rehypeKatex
     ],
-    shikiConfig: {
-      theme: "one-dark-pro",
-      wrap: true,
-    },
-    extendDefaultPlugins: true,
   },
   vite: {
     optimizeDeps: {
