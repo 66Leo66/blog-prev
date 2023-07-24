@@ -13,6 +13,7 @@ jobs:
           node-version: '18'
           cache: 'pnpm'
       - run: pnpm install
+      - run: pnpm dlx playwright install
       - run: pnpm build
       - run: pnpm postbuild
       - run: pnpm dlx wrangler pages publish dist --project-name=blog-leo
