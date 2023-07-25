@@ -43,7 +43,7 @@ const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
     minute: "2-digit",
   });
 
-  return dateonly ? (
+  return dateOnly ? (
     <>{date}</>
   ) : (
     <>
