@@ -144,7 +144,7 @@ const generateOgImage = async (mytext = SITE.title) => {
     const pngData = resvg.render();
     const pngBuffer = pngData.asPng();
 
-    console.info("Output PNG Image  :", `${mytext}.png`);
+    console.info("[OG-gen] Output PNG Image:", `${mytext}.png`);
 
     await writeFile(`./dist/${mytext}.png`, pngBuffer);
   }
