@@ -15,8 +15,6 @@ import rehypeKatex from "rehype-katex";
 import "katex/contrib/mhchem";
 
 
-import vue from "@astrojs/vue";
-
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -28,7 +26,6 @@ export default defineConfig({
     }),
     react(),
     sitemap(),
-    vue(),
   ],
   markdown: {
     syntaxHighlight: false,
