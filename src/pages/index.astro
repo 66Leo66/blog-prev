@@ -5,7 +5,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
-import Card from "@components/Card";
+import AstroCard from "@components/AstroCard.astro";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
@@ -74,7 +74,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
             <h2>精选</h2>
             <ul>
               {featuredPosts.map(({ data }) => (
-                <Card
+                <AstroCard
                   href={`/posts/${slugify(data)}`}
                   frontmatter={data}
                   secHeading={false}
@@ -94,7 +94,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
           sortedPosts.map(
             ({ data }, index) =>
               index < 4 && (
-                <Card
+                <AstroCard
                   href={`/posts/${slugify(data)}`}
                   frontmatter={data}
                   secHeading={false}
