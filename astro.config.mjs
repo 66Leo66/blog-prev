@@ -1,6 +1,5 @@
 import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
@@ -15,8 +14,6 @@ import rehypeKatex from "rehype-katex";
 import "katex/contrib/mhchem";
 
 
-import vue from "@astrojs/vue";
-
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -26,9 +23,7 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    react(),
     sitemap(),
-    vue(),
   ],
   markdown: {
     syntaxHighlight: false,

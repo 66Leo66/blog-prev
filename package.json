@@ -32,8 +32,7 @@
     "remark-torchlight": "^0.0.5",
     "satori": "^0.8.1",
     "sharp": "^0.32.4",
-    "tailwindcss": "^3.3.3",
-    "vue": "^3.3.4"
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@astrojs/react": "^2.2.1",
@@ -53,9 +52,7 @@
     "lint-staged": "^13.2.3",
     "pagefind": "^0.12.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "prettier-plugin-tailwindcss": "^0.2.8"
   },
   "config": {
     "commitizen": {
