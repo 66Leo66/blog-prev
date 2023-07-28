@@ -9,32 +9,20 @@ interface Props {
 
 const { datetime, size = "sm", className = "" } = Astro.props;
 
-const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
-  const myDatetime = new Date(datetime);
+const myDatetime = new Date(datetime);
 
-  const dateOnly = myDatetime.getHours() == 0 && myDatetime.getMinutes() == 0;
+const dateOnly = myDatetime.getHours() == 0 && myDatetime.getMinutes() == 0;
 
-  const date = myDatetime.toLocaleDateString(LOCALE, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+const date = myDatetime.toLocaleDateString(LOCALE, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 
-  const time = myDatetime.toLocaleTimeString(LOCALE, {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-
-  return dateOnly ? (
-    <>{date}</>
-  ) : (
-    <>
-      {date}
-      <span aria-hidden="true"> | </span>
-      {time}
-    </>
-  );
-};
+const time = myDatetime.toLocaleTimeString(LOCALE, {
+  hour: "2-digit",
+  minute: "2-digit",
+});
 ---
 
 <div class={`flex items-center space-x-2 opacity-80 ${className}`}>
@@ -54,6 +42,12 @@ const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
   </svg>
   <span class="sr-only">发布于:</span>
   <span class={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
-    <FormattedDatetime datetime={datetime} />
+    {
+        dateOnly ? date : <>
+            date
+            <span aria-hidden="true"> | </span>
+            time
+        </>
+    }
   </span>
 </div>
