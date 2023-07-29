@@ -1,5 +1,5 @@
 ---
-import AstroDatetime from './AstroDatetime.astro';
+import Datetime from './Datetime.astro';
 import type { BlogFrontmatter } from '@content/_schemas';
 
 interface Props {
@@ -31,6 +31,6 @@ const { title, pubDatetime, description } = frontmatter;
         </h3>
       )}
     </a>
-    <AstroDatetime datetime={pubDatetime} />
+    <Datetime datetime={pubDatetime} />
     <p>{description}</p>
   </li>
