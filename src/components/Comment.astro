@@ -6,28 +6,11 @@ import 'artalk/dist/Artalk.css'
 <script>
 import Artalk from "artalk";
 
-
-const imgtpUploader = async (file: File) => {
-    const form = new FormData()
-    form.set('image', file)
-
-    const res = await fetch("https://www.imgtp.com/upload/upload.html", {
-      method: 'POST',
-      body: form,
-      mode: "no-cors"
-    })
-    const resBody = await res.json();
-
-    return resBody.data.url;
-}
-
 Artalk.init({
     el: "#artalk",
     pageKey:   `${location.pathname}`,
     pageTitle: `${document.title}`,
     server: "https://artalk.6leo6.com",
-    site: "Leo's Blog",
-    imgUpload: true,
-    imgUploader: imgtpUploader,
+    site: "Leo's Blog"
 })
 </script>
