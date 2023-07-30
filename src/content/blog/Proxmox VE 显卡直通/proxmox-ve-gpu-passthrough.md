@@ -19,7 +19,7 @@ description: 为 Proxmox VE 配置显卡直通，使 VM 能使用宿主机显卡
 
 ## 收集必要信息
 
-```
+```bash
 root@pve:~# lspci | grep VGA
 02:00.0 VGA compatible controller: NVIDIA Corporation TU116 [GeForce GTX 1660 SUPER] (rev a1)
 81:00.0 VGA compatible controller: NVIDIA Corporation TU116 [GeForce GTX 1660 SUPER] (rev a1)
@@ -29,7 +29,7 @@ root@pve:~# lspci | grep VGA
 
 记下开头`XX:XX` PCI 地址，如上方输出中的`02:00`和`81:00`。
 
-```
+```bash
 root@pve:~# lspci -n -s 02:00
 02:00.0 0300: 10de:21c4 (rev a1)
 02:00.1 0403: 10de:1aeb (rev a1)
@@ -97,7 +97,7 @@ vfio_virqfd
 
 应用以上更改
 
-```
+```bash
 update-initramfs -u -k all
 
 ```
@@ -122,7 +122,7 @@ sudo update-grub
 
 编辑 `/root/fix_gpu_pass.sh` 写入：
 
-```
+```bash
 #!/bin/bash
 echo 1 > /sys/bus/pci/devices/0000\\:81\\:00.0/remove
 echo 1 > /sys/bus/pci/devices/0000\\:02\\:00.0/remove
@@ -134,7 +134,7 @@ echo 1 > /sys/bus/pci/rescan
 
 并设置此脚本开机运行：
 
-```
+```bash
 crontab -e
 
 ```
@@ -152,7 +152,7 @@ crontab -e
 
 1. 运行此命令
 
-```
+```bash
 dmesg | grep -e DMAR -e IOMMU
 
 ```
@@ -166,7 +166,7 @@ dmesg | grep -e DMAR -e IOMMU
 
 1. 运行此命令
 
-```
+```bash
 #!/bin/bash
 shopt -s nullglob
 for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
