@@ -12,6 +12,10 @@ Artalk.init({
     pageTitle: `${document.title}`,
     server: "https://artalk.6leo6.com",
     site: "Leo's Blog",
-    darkMode: "auto"
+    darkMode: (localStorage.getItem("theme") === "dark")
+})
+
+document.firstElementChild?.addEventListener("switched-color-mode", (_) => {
+    Artalk.setDarkMode(localStorage.getItem("theme") === "dark")
 })
 </script>
