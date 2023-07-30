@@ -6,7 +6,7 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime.astro";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
-import Commento from "@components/Commento.astro";
+import Comment from "@components/Comment.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -47,7 +47,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
 
-    <Commento data-pagefind-ignore />
+    <Comment data-pagefind-ignore />
   </main>
   <Footer />
 </Layout>
