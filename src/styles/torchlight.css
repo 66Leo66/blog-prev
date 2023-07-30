@@ -2,7 +2,7 @@
  Margin and rounding are personal preferences,
  overflow-x-auto is recommended.
 */
-pre {
+pre.torchlight {
   @apply my-4 rounded overflow-x-auto;
 }
 
@@ -12,14 +12,14 @@ pre {
  comes at the line level so that background
  colors extend edge to edge.
 */
-pre code.torchlight {
+pre.torchlight code {
   @apply block py-4 min-w-max;
   @apply font-mono;
 }
 /*
  Horizontal line padding.
 */
-pre code.torchlight .line {
+pre.torchlight code .line {
   @apply px-4;
 }
 
@@ -27,7 +27,7 @@ pre code.torchlight .line {
  Push the code away from the line numbers and
  summary caret indicators.
 */
-pre code.torchlight .line-number,
-pre code.torchlight .summary-caret {
+pre.torchlight code .line-number,
+pre.torchlight code .summary-caret {
   @apply mr-4;
 }
