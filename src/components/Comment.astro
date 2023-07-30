@@ -13,7 +13,8 @@ const imgtpUploader = async (file: File) => {
 
     const res = await fetch("https://www.imgtp.com/upload/upload.html", {
       method: 'POST',
-      body: form
+      body: form,
+      mode: "no-cors"
     })
     const resBody = await res.json();
 
