@@ -51,7 +51,7 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.45.0",
-    "eslint-plugin-astro": "^0.27.2",
+    "eslint-plugin-astro": "^0.28.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "pagefind": "^0.12.0",
