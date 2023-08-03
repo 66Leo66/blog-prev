@@ -4,6 +4,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime.astro";
+import CopyrightCard from "@components/CopyrightCard.astro";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import Comment from "@components/Comment.astro";
@@ -39,6 +40,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   <main id="main-content" data-pagefind-body>
     <h1 class="post-title">{title}</h1>
     <Datetime datetime={pubDatetime} size="lg" className="my-2" data-pagefind-ignore />
+
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
@@ -46,6 +48,14 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     <ul class="tags-container" data-pagefind-ignore>
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
+
+    <CopyrightCard
+      title={title}
+      url={Astro.url.toString()}
+      author={author!}
+      timestamp={pubDatetime}
+      license="TODO: 这里是版权协议"
+    />
 
     <div class="torchlight-credit prose my-4" data-pagefind-ignore>Codeblock highlight powered by <a href="https://torchlight.dev">Torchlight</a>.</div>
 

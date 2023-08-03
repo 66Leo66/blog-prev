@@ -1,0 +1,49 @@
+---
+import { LOCALE } from "@config";
+
+interface Props {
+  title: string;
+  url: string;
+  author: string;
+  timestamp: Date;
+  license: string;
+}
+
+const { title, url, author, timestamp, license } = Astro.props;
+
+const myDatetime = new Date(timestamp);
+
+const dateOnly = myDatetime.getHours() == 0 && myDatetime.getMinutes() == 0;
+
+const date = myDatetime.toLocaleDateString(LOCALE, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const time = myDatetime.toLocaleTimeString(LOCALE, {
+  hour: "2-digit",
+  minute: "2-digit",
+});
+
+const formatted = dateOnly ? date : date + " " + time;
+---
+
+<div
+  class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 my-2"
+  role="alert"
+>
+  <p class="font-bold text-lg">{title}</p>
+  <a class="text-sm" href={url}>{url}</a>
+  <div class="flex mt-4">
+    <div class="info-col">本文作者<a class="text-base">{author}</a></div>
+    <div class="info-col">发布时间<a class="text-base">{formatted}</a></div>
+    <div class="info-col">版权协议<a class="text-base">{license}</a></div>
+  </div>
+</div>
+
+<style>
+  .info-col {
+    @apply flex flex-col flex-shrink-0 mr-4 text-sm;
+  }
+</style>
