@@ -56,7 +56,7 @@
     "lint-staged": "^13.2.3",
     "pagefind": "^0.12.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8"
+    "prettier-plugin-tailwindcss": "^0.4.0"
   },
   "config": {
     "commitizen": {
