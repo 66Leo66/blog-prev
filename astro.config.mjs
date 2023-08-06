@@ -16,6 +16,9 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  build: {
+    inlineStylesheets: 'auto',
+  },
   integrations: [tailwind({
     config: {
       applyBaseStyles: false
