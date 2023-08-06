@@ -11,9 +11,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/contrib/mhchem";
 import react from "@astrojs/react";
-import prefetch from "@astrojs/prefetch";
 
-import partytown from "@astrojs/partytown";
+import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +24,7 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), sitemap(), react(), prefetch(), partytown()],
+  }), sitemap(), react(), prefetch()],
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkParse, remarkMermaid, remarkToc, [remarkCollapse, {
