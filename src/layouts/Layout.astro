@@ -58,14 +58,16 @@ const socialImageURL = new URL(
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
+
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+        rel="preload"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+      />
+    </noscript>
+    
 
     <!-- KaTeX -->
     <link
@@ -79,7 +81,9 @@ const socialImageURL = new URL(
       src="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/KaTeX/0.16.8/contrib/copy-tex.min.js"
       integrity="sha512-cQxSkTM4RvFAjdBeBDkrllhYfERwZWjM/oijKfPsmhR0JI2U3fXSlbUaJp5SlgBh/FzYmMyWudRTXLnNj3MbEA=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
