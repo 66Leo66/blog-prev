@@ -10,20 +10,21 @@ import torchlight from "remark-torchlight";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/contrib/mhchem";
-
 import react from "@astrojs/react";
+
+import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'auto'
   },
   integrations: [tailwind({
     config: {
       applyBaseStyles: false
     }
-  }), sitemap(), react()],
+  }), sitemap(), react(), prefetch()],
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkParse, remarkMermaid, remarkToc, [remarkCollapse, {
