@@ -15,7 +15,7 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const { title, author, description, ogImage, pubDatetime, tags } = post.data;
+const { title, author, description, ogImage, pubDatetime, tags, license } = post.data;
 
 const { Content } = await post.render();
 
@@ -54,7 +54,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
       url={Astro.url.toString()}
       author={author!}
       timestamp={pubDatetime}
-      license="TODO: 这里是版权协议"
+      license={license}
     />
 
     <div class="torchlight-credit prose my-4" data-pagefind-ignore>Codeblock highlight powered by <a href="https://torchlight.dev">Torchlight</a>.</div>

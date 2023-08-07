@@ -68,6 +68,9 @@ dependencies:
   sharp:
     specifier: ^0.32.4
     version: 0.32.4
+  smol-toml:
+    specifier: ^1.1.1
+    version: 1.1.1
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3(ts-node@10.9.1)
@@ -6154,6 +6157,11 @@ packages:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 4.0.0
     dev: true
+
+  /smol-toml@1.1.1:
+    resolution: {integrity: sha512-qyYMygHyDKiy82iiKTH/zXr0DZmEpsou0AMZnkXdYhA/0LhPLoZ/xHaOBrbecLbAJ/Gd5KhMWWH8TXtgv1g+DQ==}
+    engines: {node: '>= 18', pnpm: '>= 8'}
+    dev: false
 
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

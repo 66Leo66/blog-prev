@@ -9,6 +9,7 @@ tags:
   - virtualization
   - tutorial
 description: 为 Proxmox VE 配置显卡直通，使 VM 能使用宿主机显卡。
+license: "cc-by-sa-4.0"
 ---
 
 <!-- # Proxmox VE 配置 PCIe 显卡直通 -->

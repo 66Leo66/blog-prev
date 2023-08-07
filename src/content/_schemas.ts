@@ -11,6 +11,7 @@ export const blogSchema = z
     tags: z.array(z.string()).default(["untagged"]),
     ogImage: z.string().optional(),
     description: z.string(),
+    license: z.string().optional().default("default"),
   })
   .strict();
 
