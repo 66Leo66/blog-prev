@@ -14,14 +14,18 @@ pre.torchlight {
 */
 pre.torchlight code {
   @apply block py-4 min-w-max;
-  @apply font-mono;
 }
 /*
  Horizontal line padding.
 */
 pre.torchlight code .line {
   @apply px-4;
+  
 }
+pre.torchlight code .line span {
+  @apply font-mono;
+}
+
 
 /*
  Push the code away from the line numbers and
