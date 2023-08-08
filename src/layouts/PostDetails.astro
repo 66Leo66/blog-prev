@@ -9,6 +9,8 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import Comment from "@components/Comment.astro";
 
+import "photoswipe/dist/photoswipe.css";
+import "photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
 export interface Props {
   post: CollectionEntry<"blog">;
 }
@@ -26,9 +28,11 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
 <Layout title={title} author={author} description={description} ogImage={ogUrl}>
   <Header />
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
-    <button
+    <button_viewportSize
       class="focus-outline mb-2 mt-8 flex hover:opacity-75"
-      onclick="history.back()"
+      onclick="
+      history.back()
+      "
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon"
         ><path
@@ -81,3 +85,42 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     @apply text-sm text-center;
   }
 </style>
+
+<script>
+  // @ts-ignore
+  import PhotoSwipeLightbox from "photoswipe/lightbox"; 
+  // @ts-ignore
+  import PhotoSwipeDynamicCaption from "photoswipe-dynamic-caption-plugin";
+
+  // for all figure > img, wrap the img inside a <a> element
+  // so <img> become <a><img></a>
+  const figures = document.querySelectorAll('#article figure');
+
+  figures.forEach(figure => {
+    const img = figure.querySelector<HTMLImageElement>('figure img');
+    if (!img) return;
+    const a = document.createElement('a');
+    a.href = img.src;
+    a.setAttribute("data-pswp-width", img.getAttribute("width")!);
+    a.setAttribute("data-pswp-height", img.getAttribute("height")!);
+    a.target = "_blank";
+    a.appendChild(img.cloneNode(true));
+    figure.replaceChild(a, img);
+  });
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#article',
+    children: "figure a",
+    pswpModule: () => import("photoswipe"),
+    padding: {
+      top: 30, bottom: 30, left: 70, right: 70
+    },
+  });
+
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+    // Plugins options, for example:
+    type: 'auto',
+  });
+
+  lightbox.init();
+</script>

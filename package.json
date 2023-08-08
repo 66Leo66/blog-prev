@@ -26,6 +26,8 @@
     "astro": "^2.8.5",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
+    "photoswipe": "^5.3.8",
+    "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "rehype-figure": "^1.0.1",
