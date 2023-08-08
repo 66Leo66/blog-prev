@@ -8,6 +8,7 @@ import remarkParse from "remark-parse";
 import remarkMermaid from "remark-mermaidjs";
 import torchlight from "remark-torchlight";
 import remarkMath from "remark-math";
+import rehypeFigure from "rehype-figure";
 import rehypeKatex from "rehype-katex";
 import "katex/contrib/mhchem";
 import react from "@astrojs/react";
@@ -18,32 +19,50 @@ import prefetch from "@astrojs/prefetch";
 export default defineConfig({
   site: SITE.website,
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: "auto",
   },
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), sitemap(), react(), prefetch()],
+  integrations: [
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    sitemap(),
+    react(),
+    prefetch(),
+  ],
   markdown: {
     syntaxHighlight: false,
-    remarkPlugins: [remarkParse, remarkMermaid, remarkToc, [remarkCollapse, {
-      test: "Table of contents"
-    }], [torchlight, {
-      token: process.env.TORCHLIGHT_TOKEN,
-      theme: "nord"
-    }], remarkMath],
-    rehypePlugins: [rehypeKatex]
+    remarkPlugins: [
+      remarkParse,
+      remarkMermaid,
+      remarkToc,
+      [
+        remarkCollapse,
+        {
+          test: "Table of contents",
+        },
+      ],
+      [
+        torchlight,
+        {
+          token: process.env.TORCHLIGHT_TOKEN,
+          theme: "nord",
+        },
+      ],
+      remarkMath,
+    ],
+    rehypePlugins: [rehypeFigure, rehypeKatex],
   },
   vite: {
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
-    }
+      exclude: ["@resvg/resvg-js"],
+    },
   },
   experimental: {
-    assets: true
+    assets: true,
   },
   image: {
-    service: sharpImageService()
-  }
+    service: sharpImageService(),
+  },
 });
