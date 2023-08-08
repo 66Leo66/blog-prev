@@ -11,7 +11,7 @@ export type LicenseAlias = {
 export type LicenseListItem = License | LicenseAlias;
 
 export const licenseMap: Record<string, LicenseListItem> = {
-    "cc-by-ns-4.0": {
+    "cc-by-nc-4.0": {
         name: "CC BY-NC 4.0",
         fullName: "Creative Commons Attribution-NonCommercial 4.0 International",
         url: "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -20,6 +20,11 @@ export const licenseMap: Record<string, LicenseListItem> = {
         name: "CC BY-NC-SA 4.0",
         fullName: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
         url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    },
+    "cc-by-sa-4.0": {
+        name: "CC BY-SA 4.0",
+        fullName: "Creative Commons Attribution-ShareAlike 4.0 International",
+        url: "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "cc0": {
         name: "CC0",
