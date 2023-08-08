@@ -108,6 +108,17 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     figure.replaceChild(a, img);
   });
 
+  window.addEventListener("load", (_event) => {
+    // for all images (which should have been loaded), set the width and height of parent <a> element
+    const images = document.querySelectorAll<HTMLImageElement>('#article figure a img');
+    images.forEach(img => {
+      const a = img.parentElement;
+      if (!a) return;
+      a.setAttribute("data-pswp-width", img.naturalWidth.toString());
+      a.setAttribute("data-pswp-height", img.naturalHeight.toString());
+    });
+  });
+
   const lightbox = new PhotoSwipeLightbox({
     gallery: '#article',
     children: "figure a",
