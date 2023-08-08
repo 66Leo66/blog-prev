@@ -101,8 +101,8 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     if (!img) return;
     const a = document.createElement('a');
     a.href = img.src;
-    a.setAttribute("data-pswp-width", img.naturalWidth.toString());
-    a.setAttribute("data-pswp-height", img.naturalHeight.toString());
+    a.setAttribute("data-pswp-width", img.width.toString());
+    a.setAttribute("data-pswp-height", img.height.toString());
     a.target = "_blank";
     a.appendChild(img.cloneNode(true));
     figure.replaceChild(a, img);
