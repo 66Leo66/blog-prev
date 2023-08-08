@@ -9,7 +9,7 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import Comment from "@components/Comment.astro";
 
-import "photoswipe/dist/photoswipe.css";
+import "photoswipe/style.css";
 import "photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -101,8 +101,8 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     if (!img) return;
     const a = document.createElement('a');
     a.href = img.src;
-    a.setAttribute("data-pswp-width", img.getAttribute("width")!);
-    a.setAttribute("data-pswp-height", img.getAttribute("height")!);
+    a.setAttribute("data-pswp-width", img.naturalWidth.toString());
+    a.setAttribute("data-pswp-height", img.naturalHeight.toString());
     a.target = "_blank";
     a.appendChild(img.cloneNode(true));
     figure.replaceChild(a, img);
