@@ -114,8 +114,8 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     images.forEach(img => {
       const a = img.parentElement;
       if (!a) return;
-      a.setAttribute("data-pswp-width", img.naturalWidth.toString());
-      a.setAttribute("data-pswp-height", img.naturalHeight.toString());
+      a.setAttribute("data-pswp-width", img.width.toString());
+      a.setAttribute("data-pswp-height", img.height.toString());
     });
   });
 
