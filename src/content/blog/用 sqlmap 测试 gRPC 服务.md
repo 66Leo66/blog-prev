@@ -1,6 +1,6 @@
 ---
 author: Leo
-pubDatetime: 2022-06-25
+pubDatetime: 2022-08-11
 title: 用 sqlmap 测试 gRPC 服务
 postSlug: injecting-grpc-service-with-sqlmap
 featured: false
