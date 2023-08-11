@@ -5,7 +5,7 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 import remarkParse from "remark-parse";
-import remarkMermaid from "remark-mermaidjs";
+// import remarkMermaid from "remark-mermaidjs";
 import torchlight from "remark-torchlight";
 import remarkMath from "remark-math";
 import rehypeFigure from "rehype-figure";
@@ -35,7 +35,7 @@ export default defineConfig({
     syntaxHighlight: false,
     remarkPlugins: [
       remarkParse,
-      remarkMermaid,
+      // remarkMermaid,
       remarkToc,
       [
         remarkCollapse,
