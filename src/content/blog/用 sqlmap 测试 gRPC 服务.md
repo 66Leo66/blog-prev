@@ -43,7 +43,7 @@ gRPC Web UI available at http://127.0.0.1:60551/...
 最终得到形如这样的的请求文件：
 ```
 POST /invoke/SimpleApp.getInfo HTTP/1.1
-Host: 127.0.0.1:39379
+Host: 127.0.0.1:60551
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0
 Accept: */*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
@@ -52,9 +52,9 @@ Content-Type: application/json
 x-grpcui-csrf-token: xxxxxxxxxxxxxxxxxxx
 X-Requested-With: XMLHttpRequest
 Content-Length: 195
-Origin: http://127.0.0.1:39379
+Origin: http://127.0.0.1:60551
 Connection: close
-Referer: http://127.0.0.1:39379/
+Referer: http://127.0.0.1:60551/
 Cookie: _grpcui_csrf_token=xxxxxxxxxxxxxxxxxxx
 Sec-Fetch-Dest: empty
 Sec-Fetch-Mode: cors
