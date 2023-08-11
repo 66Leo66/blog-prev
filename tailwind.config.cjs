@@ -57,7 +57,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      serif: ["Noto Sans Simplified Chinese", "Microsoft Sans Serif"],
+      serif: ["MiSans", "Microsoft Sans Serif"],
       mono: ["Source Code Pro", "monospace"]
     },
     // },
