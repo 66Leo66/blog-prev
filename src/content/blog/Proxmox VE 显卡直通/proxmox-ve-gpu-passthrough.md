@@ -1,6 +1,6 @@
 ---
 author: Leo
-pubDatetime: 2022-06-25
+pubDatetime: "2022-06-25"
 title: Proxmox VE 配置 PCIe 显卡直通
 postSlug: proxmox-ve-gpu-passthrough
 featured: false
