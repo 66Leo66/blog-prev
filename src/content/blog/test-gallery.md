@@ -1,6 +1,6 @@
 ---
 author: Leo
-pubDatetime: 2023-08-08
+pubDatetime: "2023-08-08"
 title: Test PhotoSwipe
 postSlug: photoswipe-test
 featured: false
