@@ -23,7 +23,7 @@
     "@types/react-dom": "^18.0.6",
     "@waline/client": "^2.15.5",
     "artalk": "^2.5.5",
-    "astro": "^2.8.5",
+    "astro": "^3.0.0",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "photoswipe": "^5.3.8",
