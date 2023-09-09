@@ -59,9 +59,6 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
-  experimental: {
-    assets: true,
-  },
   image: {
     service: sharpImageService(),
   },
