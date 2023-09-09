@@ -30,5 +30,6 @@
       ]
     },
     "jsxImportSource": "react"
-  }
+  },
+  "exclude": [ "public/_pagefind" ]
 }
