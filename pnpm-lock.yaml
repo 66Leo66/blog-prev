@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.3.0
     version: 0.3.0
   '@astrojs/rss':
-    specifier: ^2.4.3
-    version: 2.4.3
+    specifier: ^3.0.0
+    version: 3.0.0
   '@astrojs/vue':
     specifier: ^3.0.0
     version: 3.0.0(@babel/core@7.22.17)(astro@3.0.12)(vite@4.4.9)(vue@3.3.4)
@@ -276,10 +276,10 @@ packages:
       - vite
     dev: true
 
-  /@astrojs/rss@2.4.3:
-    resolution: {integrity: sha512-Dc8lxsXiDlnxONVIUuc3ohO1+vV1Hp9fRFdUianOola0S9/xv/6FzIHhkQ62MkaFSlcZm5uIOllRWNKVvuFuoA==}
+  /@astrojs/rss@3.0.0:
+    resolution: {integrity: sha512-PMX8iqByk9gtOrusikten/oF5uHjOCZigL6RuXFBUu+xtdKQxXzfIohJ99V2haA4FJjVDyibDTGzXR81POBMxQ==}
     dependencies:
-      fast-xml-parser: 4.2.6
+      fast-xml-parser: 4.2.7
       kleur: 4.1.5
     dev: false
 
@@ -3720,8 +3720,8 @@ packages:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
     dev: true
 
-  /fast-xml-parser@4.2.6:
-    resolution: {integrity: sha512-Xo1qV++h/Y3Ng8dphjahnYe+rGHaaNdsYOBWL9Y9GCPKpNKilJtilvWkLcI9f9X2DoKTLsZsGYAls5+JL5jfLA==}
+  /fast-xml-parser@4.2.7:
+    resolution: {integrity: sha512-J8r6BriSLO1uj2miOk1NW0YVm8AGOOu3Si2HQp/cSmo6EA4m3fcwu2WKjJ4RK9wMLBtg69y1kS8baDiQBR41Ig==}
     hasBin: true
     dependencies:
       strnum: 1.0.5
