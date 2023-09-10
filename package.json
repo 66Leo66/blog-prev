@@ -22,7 +22,6 @@
     "@astrojs/vue": "^3.0.0",
     "@resvg/resvg-js": "^2.4.1",
     "@types/react-dom": "^18.0.6",
-    "@waline/client": "^2.15.5",
     "artalk": "^2.5.5",
     "astro": "^3.0.12",
     "fuse.js": "^6.6.2",
