@@ -25,7 +25,7 @@ jobs:
           # An explicit key for restoring and saving the cache
           key: playwright
       - run: pnpm install
-      - run: pnpm exec playwright install
+      - run: pnpm dlx playwright install
       - run: pnpm build
       - run: pnpm postbuild
       - run: pnpm exec wrangler pages deploy dist --project-name=blog-leo
