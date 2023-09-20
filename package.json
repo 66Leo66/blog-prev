@@ -36,7 +36,7 @@
     "remark-math": "^5.1.1",
     "remark-mermaidjs": "^5.0.2",
     "remark-parse": "^10.0.2",
-    "remark-toc": "^8.0.1",
+    "remark-toc": "^9.0.0",
     "remark-torchlight": "^0.0.5",
     "satori": "^0.10.4",
     "sharp": "^0.32.5",
