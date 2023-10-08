@@ -5,7 +5,7 @@
     "dev": "astro check --watch & astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "postbuild": "pagefind --source dist && jampack ./dist",
+    "postbuild": "pagefind --site dist && jampack ./dist",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
@@ -59,7 +59,7 @@
     "eslint-plugin-astro": "^0.29.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "pagefind": "^0.12.0",
+    "pagefind": "^1.0.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "wrangler": "^3.7.0"
