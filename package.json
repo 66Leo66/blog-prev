@@ -5,7 +5,7 @@
     "dev": "astro check --watch & astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "postbuild": "pagefind --source dist && jampack ./dist",
+    "postbuild": "pagefind --site dist && jampack ./dist",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
