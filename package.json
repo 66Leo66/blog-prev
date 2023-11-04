@@ -32,7 +32,7 @@
     "rehype-figure": "^1.0.1",
     "rehype-katex": "^7.0.0",
     "remark-collapse": "^0.1.2",
-    "remark-math": "^5.1.1",
+    "remark-math": "^6.0.0",
     "remark-mermaidjs": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-toc": "^9.0.0",
