@@ -24,7 +24,6 @@
     "@types/react-dom": "^18.2.14",
     "artalk": "^2.6.4",
     "astro": "^3.4.3",
-    "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "photoswipe": "^5.4.2",
     "photoswipe-dynamic-caption-plugin": "^1.2.7",
