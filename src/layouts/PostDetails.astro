@@ -9,8 +9,9 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import Comment from "@components/Comment.astro";
 
-import "photoswipe/style.css";
-import "photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
+// import "photoswipe/style.css";
+// import "photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
+import "lightgallery/css/lightgallery-bundle.css";
 export interface Props {
   post: CollectionEntry<"blog">;
 }
@@ -87,10 +88,15 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
 </style>
 
 <script>
-  // @ts-ignore
-  import PhotoSwipeLightbox from "photoswipe/lightbox"; 
-  // @ts-ignore
-  import PhotoSwipeDynamicCaption from "photoswipe-dynamic-caption-plugin";
+  // // @ts-ignore
+  // import PhotoSwipeLightbox from "photoswipe/lightbox"; 
+  // // @ts-ignore
+  // import PhotoSwipeDynamicCaption from "photoswipe-dynamic-caption-plugin";
+  import lightGallery from "lightgallery";
+  import lgThumbnail from "lightgallery/plugins/thumbnail";
+  import lgZoom from "lightgallery/plugins/zoom";
+  import lgFullscreen from "lightgallery/plugins/fullscreen";
+  import lgRotate from "lightgallery/plugins/rotate";
 
   // for all figure > img, wrap the img inside a <a> element
   // so <img> become <a><img></a>
@@ -100,9 +106,9 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     const img = figure.querySelector<HTMLImageElement>('figure img');
     if (!img) return;
     const a = document.createElement('a');
-    a.href = img.src;
-    a.setAttribute("data-pswp-width", img.width.toString());
-    a.setAttribute("data-pswp-height", img.height.toString());
+    a.className = "lightbox-image"
+    a.setAttribute("data-src", img.src);
+    a.setAttribute("data-lg-size", `${img.width.toString()}-${img.height.toString()}`);
     a.target = "_blank";
     a.appendChild(img.cloneNode(true));
     figure.replaceChild(a, img);
@@ -114,25 +120,14 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     images.forEach(img => {
       const a = img.parentElement;
       if (!a) return;
-      a.setAttribute("data-pswp-width", img.width.toString());
-      a.setAttribute("data-pswp-height", img.height.toString());
+      a.setAttribute("data-lg-size", `${img.width.toString()}-${img.height.toString()}`);
     });
   });
 
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#article',
-    children: "figure a",
-    pswpModule: () => import("photoswipe"),
-    padding: {
-      top: 30, bottom: 30, left: 70, right: 70
-    },
-    // appendToEl: document.querySelector("#main-content")
-  });
-
-  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
-    // Plugins options, for example:
-    type: 'auto',
-  });
-
-  lightbox.init();
+  lightGallery(
+    document.getElementById('article')!, {
+      selector: ".lightbox-image",
+      plugins: [lgThumbnail, lgZoom, lgFullscreen, lgRotate]
+    }
+  )
 </script>

@@ -25,6 +25,7 @@
     "artalk": "^2.6.4",
     "astro": "^3.4.3",
     "github-slugger": "^2.0.0",
+    "lightgallery": "^2.7.2",
     "photoswipe": "^5.4.2",
     "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "react": "^18.2.0",
